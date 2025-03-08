@@ -5,3 +5,20 @@ give a creditability percentage but only the percentage, and only 1 number follo
 here is the article: 
 
 */
+let text = "";
+let textbox = document.getElementById("textbox");
+document.getElementById("textboxTitle").style.paddingBottom = window.innerHeight/20 +"px"
+textbox.style.width = window.innerWidth/2 + "px";
+textbox.style.height = window.innerWidth/15 + "px";
+textbox.addEventListener("keydown", (event) => {
+    if (event.key == 'Enter') {
+        text = textbox.value;
+        console.log(text);
+        textbox.value = ""
+        
+        
+    }
+})
+
+
+//document.getElementById("textboxTitle").addEventListener()
