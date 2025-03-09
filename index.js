@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let hill3 = document.getElementById('hill3');
     let hill4 = document.getElementById('hill4');
     let hill5 = document.getElementById('hill5');
-
+    let linkButton = document.getElementById('linkButton');
     window.addEventListener('scroll', () => {
         let value = window.scrollY;
         text.style.marginTop = value * 2.5 + 'px';
@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         hill4.style.left = value * -0.25 + 'px';
         hill1.style.top = value * 1 + 'px';
         hill3.style.left = value * .5 + 'px';
-
     });
+    linkButton.addEventListener('click', () => {
+        window.location.href = "main.html"
+    })
+    
 });
 
