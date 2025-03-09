@@ -1,38 +1,49 @@
-/*
-
-give a creditability percentage but only the percentage, and only 1 number followed by a percent sign. then, Give me 5 pointers in a list that shows why you chose this percent. the list should be this format: title (new line) reasons. for absolutely no reason should you include any other info. only return the info that I input. keep all the responses concise and accurate. 
-
-here is the article: 
-
-*/
 let text = "";
 let textbox = document.getElementById("textbox");
 let resultBox = document.getElementById("resultbox");
-document.getElementById("textboxTitle").style.paddingBottom = window.innerHeight/15 +"px"
-textbox.style.width = window.innerWidth/2 + "px";
-textbox.style.height = window.innerWidth/15 + "px";
+let percent = document.getElementById("percentage");
+let credTitle = document.getElementById("credtitle");
+let results = "";
+let loadtext = document.getElementById("loadtext");
+let reasonTitle = document.getElementById("reasontitle");
+let reasonList = [document.getElementById("reason1"), document.getElementById("reason2"), document.getElementById("reason3"), document.getElementById("reason4"),document.getElementById("reason5")]
 
-resultBox.style.width = window.innerWidth/2 + "px";
-resultBox.style.height = window.innerHeight/3 + "px";
+document.getElementById("textboxTitle").style.paddingBottom = window.innerHeight / 15 + "px";
+textbox.style.width = window.innerWidth / 2 + "px";
+textbox.style.height = window.innerWidth / 15 + "px";
+
+resultBox.style.width = window.innerWidth / 2 + "px";
+resultBox.style.height = window.innerHeight / 3 + "px";
+
 textbox.addEventListener("keydown", (event) => {
     if (event.key == 'Enter') {
         text = textbox.value;
-        textbox.value = ""
-        resultBox.style.display = "block"
-        const apiUrl = "https://two025longhornhackathonapi.onrender.com/api/get-credibility?url=" + text
+        textbox.value = "";
+        resultBox.style.display = "block";
+        const apiUrl = "https://two025longhornhackathonapi.onrender.com/api/get-credibility?url=" + text;
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+        // Reset previous results
+        loadtext.innerText = "Loading...";
 
-      fetch(proxyUrl + apiUrl, {
-        method: "GET",
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
-
+        // Fetch request
+        fetch(proxyUrl + apiUrl, {
+            method: "GET",
+        })
+        .then(response => response.json())
+        .then(data => {
+            loadtext.innerText = "";
+            results = data; // Get the response datac
+            credTitle.innerText = "Credibility Score:"
+            percent.innerText = results.credibility_analysis[0]; // Display the credibility analysis result
+            reasonTitle.innerText = "Reasons:"
+            for (i=1; i<=5; i++) {
+                reasonList[i-1].innerText = results.credibility_analysis[i];
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            resultBox.innerHTML = "Error fetching data.";
+        });
     }
-})
-
-
-
-//document.getElementById("textboxTitle").addEventListener()
+});
