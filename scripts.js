@@ -13,7 +13,7 @@ textbox.style.width = window.innerWidth / 2 + "px";
 textbox.style.height = window.innerWidth / 15 + "px";
 
 resultBox.style.width = window.innerWidth / 2 + "px";
-resultBox.style.height = window.innerHeight / 3 + "px";
+resultBox.style.height = window.innerHeight / 2 + "px";
 
 textbox.addEventListener("keydown", (event) => {
     if (event.key == 'Enter') {
