@@ -17,11 +17,22 @@ resultBox.style.height = window.innerHeight/3 + "px";
 textbox.addEventListener("keydown", (event) => {
     if (event.key == 'Enter') {
         text = textbox.value;
-        console.log(text);
         textbox.value = ""
         resultBox.style.display = "block"
+        const apiUrl = "https://two025longhornhackathonapi.onrender.com/api/get-credibility?url=" + text
+
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
+      fetch(proxyUrl + apiUrl, {
+        method: "GET",
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+
     }
 })
+
 
 
 //document.getElementById("textboxTitle").addEventListener()
