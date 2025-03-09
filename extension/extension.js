@@ -25,3 +25,7 @@ Array.from(circularProgress).forEach((progressBar) => {
     }
   }, speed);
 });
+
+document.getElementById("checkSite").addEventListener("click", () => {
+  window.location.href = "extension.html";
+})
