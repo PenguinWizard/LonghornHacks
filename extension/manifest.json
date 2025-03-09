@@ -1,0 +1,10 @@
+{
+    "name": "Vero",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "author": "Vero Team",
+    "action": {
+        "default_popup": "extension.html",
+        "default_title": "Vero"
+    }
+}
