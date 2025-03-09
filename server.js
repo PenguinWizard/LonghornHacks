@@ -36,7 +36,7 @@ function getData(article){
 // Example usage
 (async () => {
     const e = await getOpenAIResponse(
-        "give a credibility percentage but only the percentage, and only 1 number followed by a percent sign. 0 percent means untrustworthy, while 100 percent means completely trustworthy. then, Give me 5 pointers in a list that shows why you chose this percent. The list should be this format: title (new line) reasons. For absolutely no reason should you include any other info. It should be in the form ( - Reason) only return the info that I input. Keep all the responses concise and accurate. Here is the article: " + article
+        "give a accuracy of information percentage but only the percentage, and only 1 number followed by a percent sign. 0 percent means compleatley inacurate, while 100 percent means completely accurate. Make sure to cross reference the sources and facts before providing answer. then, Give me 5 pointers in a list that shows why you chose this percent. The list should be this format: title (new line) reasons. For absolutely no reason should you include any other info. It should be in the form ( - Reason) only return the info that I input. Keep all the responses concise and accurate. Here is the article: " + article
     );
 
     console.log(e)

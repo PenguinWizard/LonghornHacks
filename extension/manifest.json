@@ -2,9 +2,10 @@
     "name": "Vero",
     "version": "1.0.0",
     "manifest_version": 3,
+    "permissions": ["tabs", "activeTab"],
     "author": "Vero Team",
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "extension.html",
         "default_title": "Vero"
     }
 }
