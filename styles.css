@@ -1,6 +1,11 @@
 body {
     text-align: center;
     background-color: #E0E1DD;
+    background-image: url("https://t4.ftcdn.net/jpg/02/47/88/91/360_F_247889137_guKUbsdiv3s0Bfe3URiiYSksqlCQC63i.jpg");
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    overflow-y: hidden;
+    font-family: Monserrat, sans-serif;
 }
 
 ::-webkit-input-placeholder {
@@ -34,19 +39,41 @@ body {
     border: none;
     box-shadow: 0px 5px 5px rgb(158, 154, 154);
     margin: auto;
+    z-index: 10;
+    margin-bottom: 20px;
 }
 #fact {
     font-style: italic;
 }
-@keyframes rotatebox {
-    100% {transform: rotate(360deg)}
+@keyframes fadein {
+    100% {background-color: rgba(255,255,255,0.5)}
 }
 #square {
     margin: auto;
     background-color: #415A77;
-    width: 100px;
+    width: 200px;
     height: 100px;
     animation-name: rotatebox;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+}
+#tree {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    z-index: -1;
+}
+
+#resultbox {
+    margin: auto;
+    font-family: Montserrat, sans-serif;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.5);
+    padding-top: 5px;
+    box-shadow: 0px 5px 5px rgb(158, 154, 154);
+    backdrop-filter: blur(10px);
+    display: none;
+    animation-name: fadein;
+    animation-duration: 2s;
+    /*animation-iteration-count: infinite;*/
 }

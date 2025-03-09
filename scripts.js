@@ -7,16 +7,19 @@ here is the article:
 */
 let text = "";
 let textbox = document.getElementById("textbox");
-document.getElementById("textboxTitle").style.paddingBottom = window.innerHeight/20 +"px"
+let resultBox = document.getElementById("resultbox");
+document.getElementById("textboxTitle").style.paddingBottom = window.innerHeight/15 +"px"
 textbox.style.width = window.innerWidth/2 + "px";
 textbox.style.height = window.innerWidth/15 + "px";
+
+resultBox.style.width = window.innerWidth/2 + "px";
+resultBox.style.height = window.innerHeight/3 + "px";
 textbox.addEventListener("keydown", (event) => {
     if (event.key == 'Enter') {
         text = textbox.value;
         console.log(text);
         textbox.value = ""
-        
-        
+        resultBox.style.display = "block"
     }
 })
 

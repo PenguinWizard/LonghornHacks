@@ -4,6 +4,8 @@
     box-sizing: border-box;
     text-align: center;
     background-color: #E0E1DD;
+    font-family: "Montserrat", sans-serif;
+
   }
 
   #scoreTitleDiv {
@@ -14,6 +16,7 @@
     --progress-bar-width: 200px;
     --progress-bar-height: 200px;
     --font-size: 2rem;
+
   }
   
   .circular-progress {
@@ -27,10 +30,12 @@
   }
   .inner-circle {
     position: absolute;
-    width: calc(var(--progress-bar-width) - 20px);
-    height: calc(var(--progress-bar-height) - 20px);
+    width: calc(var(--progress-bar-width) - 50px);
+    height: calc(var(--progress-bar-height) - 50px);
     border-radius: 50%;
     background-color: #E0E1DD;
+
+
   }
   
   .percentage {
