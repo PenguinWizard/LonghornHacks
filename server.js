@@ -15,7 +15,7 @@ async function getOpenAIResponse(prompt) {
             {
                 model: "gpt-4o-mini", // You can change the model if needed
                 messages: [{ role: "user", content: prompt }],
-                max_tokens: 100
+                max_tokens: 500
             },
             {
                  headers: {
